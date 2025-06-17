@@ -1,6 +1,6 @@
-baseURL = "http://localhost:1313/"
-languageCode = "en-us"
-title = "My Hugo Blog"
+baseURL = "https://blog.an3.io"
+ilanguageCode = "en-us"
+title = "AN3 Blogs"
 theme = "PaperMod"
 
 [params]
