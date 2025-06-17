@@ -1,7 +1,9 @@
 backend:
   name: github
-  repo: alyyashar/an3-blog  # ← replace with your GitHub repo
+  repo: alyyashar/an3-blog
   branch: main
+  base_url: https://auth.decapcms.org   # ← GitHub OAuth proxy
+  auth_endpoint: oauth/authorize
 
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
