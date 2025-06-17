@@ -6,11 +6,13 @@
     <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
   </head>
   <body>
-<div id="nc-root"></div> <!-- REQUIRED for CMS to mount -->
-  <script>
-      // Initialize CMS
+    <div id="nc-root"></div>
+    <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
+    <script>
       window.CMS_MANUAL_INIT = true;
-      CMS.init();
+      document.addEventListener("DOMContentLoaded", function () {
+        CMS.init();
+      });
     </script>
   </body>
 </html>
