@@ -1,10 +1,10 @@
 [build]
-  command   = "hugo --gc --minify"
-  publish   = "public"
+  command = "hugo --gc --minify && cp -r admin public/admin"
+  publish = "public"
 
 [[redirects]]
-  from    = "/admin/*"
-  to      = "/admin/index.html"
-  status  = 200
-  force   = true
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+  force = true
 
