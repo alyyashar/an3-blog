@@ -2,4 +2,9 @@
   command   = "hugo --gc --minify"
   publish   = "public"
 
+[[redirects]]
+  from    = "/admin/*"
+  to      = "/admin/index.html"
+  status  = 200
+  force   = true
 
