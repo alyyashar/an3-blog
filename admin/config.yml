@@ -5,6 +5,11 @@ backend:
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 
+# Required site configuration
+site_url: https://blog.an3.io
+display_url: https://blog.an3.io
+logo_url: https://blog.an3.io/images/logo.svg
+
 collections:
   - name: "post"
     label: "Posts"
@@ -12,7 +17,19 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title",       name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date",  widget: "datetime" }
-      - { label: "Body",        name: "body",  widget: "markdown" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
 
+# Optional but recommended settings
+publish_mode: editorial_workflow
+media_library:
+  name: netlify-media
+  config:
+    multiple: false
+
+# Additional recommended settings
+search: false
+slug:
+  encoding: "ascii"
+  clean_accents: true
