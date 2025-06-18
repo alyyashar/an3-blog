@@ -2,7 +2,7 @@ backend:
   name: github
   repo: alyyashar/an3-blog
   branch: main
-  base_url: https://auth.decapcms.org   # ← GitHub OAuth proxy
+  base_url: https://github-oauth-proxy.netlify.app
   auth_endpoint: oauth/authorize
 
 media_folder: "static/images/uploads"
