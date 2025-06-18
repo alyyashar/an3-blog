@@ -6,6 +6,11 @@ backend:
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 
+media_library:
+  name: uploadcare
+  config:
+    publicKey: ba815fd583e3c657afdd
+
 collections:
   - name: "post"
     label: "Posts"
