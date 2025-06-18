@@ -3,35 +3,28 @@
   <head>
     <meta charset="utf-8" />
     <title>Content Manager</title>
-
     <!-- Netlify Identity widget -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-    <!-- Netlify-CMS core via jsDelivr (more reliable than unpkg) -->
+    <!-- Netlify CMS -->
     <script src="https://cdn.jsdelivr.net/npm/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
   </head>
-
   <body>
-    <!-- This is where the CMS UI will render -->
     <div id="nc-root"></div>
-
     <script>
-      // Delay CMS init until after Identity has loaded
+      // Prevent auto-init so we can wire up Identity first
       window.CMS_MANUAL_INIT = true;
 
-      // If the Identity widget is available, open it when there's no user
+      // Initialize Identity
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
           if (!user) {
             window.netlifyIdentity.open();
           }
         });
-        // Kick off the Identity widget
         window.netlifyIdentity.init();
       }
 
-      // Once the CMS script has loaded, this will fire
-      // and mount the Netlify CMS app into #nc-root
+      // Finally initialize CMS (it will fetch /admin/config.yml)
       CMS.init();
     </script>
   </body>
