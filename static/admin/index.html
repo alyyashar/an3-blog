@@ -3,19 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <title>Content Manager</title>
-
-    <!-- Netlify Identity widget -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-    <!-- Netlify CMS core (latest v2.x) -->
-    <script src="https://unpkg.com/netlify-cms@2.10.0/dist/netlify-cms.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/netlify-cms@2.10.0/dist/netlify-cms.js"></script>
   </head>
   <body>
-    <!-- this is where the CMS UI will go -->
     <div id="nc-root"></div>
-
     <script>
-      // If Identity exists, listen for init—and open the modal if not logged in
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
           if (!user) {
@@ -23,11 +16,7 @@
           }
         });
       }
-
-      // Tell the CMS we'll init it manually
       window.CMS_MANUAL_INIT = true;
-
-      // Once the page is loaded, start Netlify CMS
       document.addEventListener("DOMContentLoaded", function () {
         CMS.init();
       });
