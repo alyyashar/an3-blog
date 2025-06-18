@@ -2,8 +2,8 @@ backend:
   name: github
   repo: alyyashar/an3-blog
   branch: main
-  base_url: https://an3.netlify.app/authenticate
-  auth_endpoint: /authenticate
+  base_url: https://oauth.netlify.com
+  auth_endpoint: oauth/authorize
 
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
