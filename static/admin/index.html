@@ -1,32 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
     <title>Content Manager</title>
-    <!-- Netlify Identity widget -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <!-- Netlify CMS -->
-    <script src="https://cdn.jsdelivr.net/npm/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
+    <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
   </head>
   <body>
     <div id="nc-root"></div>
+    <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
     <script>
-      // Prevent auto-init so we can wire up Identity first
       window.CMS_MANUAL_INIT = true;
-
-      // Initialize Identity
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.open();
-          }
-        });
-        window.netlifyIdentity.init();
-      }
-
-      // Finally initialize CMS (it will fetch /admin/config.yml)
-      CMS.init();
+      document.addEventListener("DOMContentLoaded", function () {
+        CMS.init();
+      });
     </script>
   </body>
 </html>
-
