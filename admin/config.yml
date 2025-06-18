@@ -1,9 +1,6 @@
 backend:
-  name: github
-  repo: alyyashar/an3-blog
+  name: git-gateway
   branch: main
-  auth_endpoint: /authenticate          # Netlify Identity + gateway
-  base_url:    https://an3.netlify.app
 
 
 media_folder: "static/images/uploads"
