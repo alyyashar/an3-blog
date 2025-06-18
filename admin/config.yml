@@ -2,21 +2,18 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "static/images/uploads"   # where files end up in your repo
-public_folder: "/images/uploads"        # how you reference them in your templates
+media_folder: "static/img"
+public_folder: "/img"
 
-media_library:                          # ← this is required
+media_library:
   name: uploadcare
-  config:
-    publicKey: ba815fd583e3c657afdd           # ← replace with your Uploadcare public key
 
 collections:
-  - name: "post"
+  - name: "posts"
     label: "Posts"
     folder: "content/posts"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title",        name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date",  widget: "datetime" }
-      - { label: "Body",         name: "body",  widget: "markdown" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
