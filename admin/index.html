@@ -9,6 +9,13 @@
 <body>
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   <script>
+    CMS.init({
+      config: {
+        load_config_file: true
+      }
+    });
+  </script>
+  <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
         if (!user) {
