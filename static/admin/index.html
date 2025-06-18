@@ -3,16 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <title>Content Manager</title>
+    <!-- Netlify Identity widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <!-- Netlify-CMS core -->
     <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
   </head>
   <body>
     <div id="nc-root"></div>
-    <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
     <script>
-      window.CMS_MANUAL_INIT = true;
-      document.addEventListener("DOMContentLoaded", function () {
-        CMS.init();
-      });
+      // Bind the Identity widget
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.open();
+          }
+        });
+      }
+      // Initialize the CMS
+      CMS.init();
     </script>
   </body>
 </html>
+
