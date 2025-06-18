@@ -1,5 +1,5 @@
 [build]
-  command = "hugo --gc --minify && cp -r admin public/admin"
+  command = "hugo --gc --minify && mkdir -p public/admin && cp -r static/admin/* public/admin"
   publish = "public"
 
 [[redirects]]
